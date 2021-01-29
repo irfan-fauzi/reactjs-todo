@@ -1,0 +1,57 @@
+.auth-card {
+  border: grey solid 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+}
+
+.auth-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+  margin: 10px auto;
+  border: grey solid 1px;
+  padding: 10px;
+}
+
+.btn {
+  padding: 0.5rem 0;
+  border: none;
+  width: 100%;
+  margin: 1rem auto;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background: limegreen;
+  color: #ffffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+  background-color: #208c0b;
+}
+
+.btn-disable {
+  background: grey;
+}
+
+.btn-disable:hover {
+  background-color: grey;
+}
+/*# sourceMappingURL=Register.css.map */
