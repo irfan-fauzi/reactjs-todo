@@ -3,7 +3,8 @@ const initialState = {
   popup: false,
   isLogin: false,
   isLoading: false,
-  user: { }
+  user: {},
+  notes: []
 }
 const reducer = (state = initialState, action) => {
   if (action.type === 'CHANGE_POPUP') {
@@ -31,6 +32,14 @@ const reducer = (state = initialState, action) => {
       isLoading: action.value
     }
   }
+  // notes database
+  if (action.type === 'SET_NOTES') {
+    return {
+      ...state,
+      notes: action.value
+    }
+  }
+  
   return state;
 }
 

@@ -36,18 +36,22 @@
     .save-btn{
       padding: 12px 50px;
       border-radius: 4px;
-      background: white;
+      background: green;
       border: 2px solid green;
-      color: green;
+      color: #fff;
       font-size: 14px;
       font-weight: bold;
       text-transform: uppercase;
       cursor: pointer;
       transition: 0.5s;
       &:hover{
-        background-color: green;
+        background-color: rgb(23, 255, 23);
         color: #ffff;
       }
+    }
+    .cancel-btn{
+      background-color: #fff;
+      color: green;
     }
   }  
   .card-content{
@@ -56,6 +60,12 @@
     padding: 14px;
     box-shadow: 4px 3px 9px rgba($color: #000000, $alpha: 0.1);
     margin-bottom: 16px;
+    transition: 0.4s;
+    &:hover{
+      cursor: pointer;
+      background: #eaeaea;
+      transform: translateY(-10px);
+    }
     p{
       margin: 8px;
     }
@@ -71,4 +81,11 @@
       font-size: 14px;
     }
   }
+}
+.btn-wrap{
+  //border: red solid 1px;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  
 }

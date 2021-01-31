@@ -61,5 +61,45 @@ export const writeDataAPI = (data) => (dispatch) => {
     date: data.date
   });
 
+}
+
+export const getDataAPI = (postId) => (dispatch) => {
+  let urlNotes = database.ref('notes/' + postId);
+  return new Promise((resolve, reject) => {
+
+    urlNotes.on('value', (snapshot) => {
+      // console.log('get data', snapshot.val())
+      const arrData = [];
+      Object.keys(snapshot.val()).map(key => {
+        arrData.push(
+          {
+            id: key,
+            data: snapshot.val()[key]
+          }
+        )
+      })
+      dispatch({ type: 'SET_NOTES', value: arrData })
+      resolve(arrData)
+      //console.log(arrData)
+    });
+  })
+}
+
+export const updateDataAPI = (data) => (dispatch) => {
+  const urlNotes = database.ref(`notes/${data.userId}/${data.idNotes}`);
+  return new Promise((resolve, reject) => {
+    urlNotes.set({
+      title: data.title,
+      content: data.content
+    }, (error) => {
+      if (error) {
+        console.log(error)
+        reject(false)
+      } else {
+        console.log("success")
+        resolve(true)
+      }
+    })
+  })
 
 }

@@ -51,9 +51,9 @@
 .container .input-form .save-btn {
   padding: 12px 50px;
   border-radius: 4px;
-  background: white;
+  background: green;
   border: 2px solid green;
-  color: green;
+  color: #fff;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
@@ -63,8 +63,13 @@
 }
 
 .container .input-form .save-btn:hover {
-  background-color: green;
+  background-color: #17ff17;
   color: #ffff;
+}
+
+.container .input-form .cancel-btn {
+  background-color: #fff;
+  color: green;
 }
 
 .container .card-content {
@@ -74,6 +79,15 @@
   -webkit-box-shadow: 4px 3px 9px rgba(0, 0, 0, 0.1);
           box-shadow: 4px 3px 9px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.container .card-content:hover {
+  cursor: pointer;
+  background: #eaeaea;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .container .card-content p {
@@ -92,5 +106,15 @@
 .container .card-content .content {
   margin-top: 20px;
   font-size: 14px;
+}
+
+.btn-wrap {
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=Dashboard.css.map */
