@@ -1,0 +1,74 @@
+.container{
+  max-width: 900px;
+  display: block;
+  margin: auto;
+  .input-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .input-title{
+      width: 40%;
+      background: #ffff;
+      border: 1px solid green;
+      padding: 12px;
+      //border-bottom: 4px;
+      color: gray;
+      font-size: 14px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+      
+    }
+    .input-content{
+      width: 40%;
+      border: 1px solid green;
+      border-radius: 4px;
+      box-sizing: border-box;
+      padding: 12px;
+      min-height: 200px;
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: gray;
+      outline: none;
+    }
+    .save-btn{
+      padding: 12px 50px;
+      border-radius: 4px;
+      background: white;
+      border: 2px solid green;
+      color: green;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover{
+        background-color: green;
+        color: #ffff;
+      }
+    }
+  }  
+  .card-content{
+    border: 1px solid rgba($color: #000000, $alpha: 0.1);
+    border-radius: 4px;
+    padding: 14px;
+    box-shadow: 4px 3px 9px rgba($color: #000000, $alpha: 0.1);
+    margin-bottom: 16px;
+    p{
+      margin: 8px;
+    }
+    .title{
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .date{
+      font-size: 12px;
+    }
+    .content{
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  }
+}

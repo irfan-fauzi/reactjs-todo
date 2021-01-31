@@ -4,11 +4,13 @@ import './Register.css';
 import Button from '../../../components/atoms/Button';
 import { connect } from 'react-redux';
 import { registerUserAPI } from '../../../config/redux/action';
+import ErrorRegister from '../../../components/atoms/ErrorRegister';
 
 export class Register extends Component {
   state = {
     email: '',
     password: '',
+    pesanError: ''
   }
 
   handleChangeText = (e) => {
@@ -17,18 +19,36 @@ export class Register extends Component {
     })
   }
 
-  handleRegisterSubmit = () => {
+  handleRegisterSubmit = async () => {
 
     const { email, password } = this.state;
-    this.props.registerAPI({
+    const res = await this.props.registerAPI({
       email,
       password
-    })
-    this.setState({
-      email: '',
-      password: ''
-    })
+    }).catch((err) => {
+      // console.log(err)
+      this.setState({
+        pesanError: err
+      })
+    });
+    // jika res = true maka kosongkan tetxt
+    if (res) {
+      this.setState({
+        email: '',
+        password: '',
+        pesanError: ''
+      })
+      console.log(this.state)
+    } else {
+      console.log(this.state)
+    }
+
+    // jika res/hasil promise ke API gagal, maka:
+
   }
+
+
+
 
   // loading tombol / disable 
 
@@ -40,6 +60,7 @@ export class Register extends Component {
           <input className="input" id="email" type="text" placeholder="email" onChange={this.handleChangeText} value={this.state.email} />
           <input className="input" id="password" type="password" placeholder="pasword" onChange={this.handleChangeText} value={this.state.password} />
           <Button onClick={this.handleRegisterSubmit} title="Register" loading={this.props.isLoading} />
+          <ErrorRegister pesanError={this.state.pesanError}/>
         </div>
         {/* <button>Go to Dashboard</button> */}
       </div>
